@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>A Message from Henrico Silvis — Silvis Investment Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #52b152; --green-light: #66cc66; --black: #0a0a0a;
+      --dark: #111111; --dark2: #1a1a1a; --dark3: #222222;
+      --mid: #444444; --muted: #888888; --border: #2a2a2a; --white: #f5f5f0;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--dark); color: var(--white); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 60px; height: 72px;
+      background: rgba(10,10,10,0.97); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; letter-spacing: 2px; color: var(--white); text-decoration: none; }
+    .nav-logo span { color: var(--green-light); }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--green-light); }
+
+    .page-header {
+      padding: 160px 60px 80px; background: var(--black);
+      border-bottom: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .page-header::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(82,177,82,0.05) 0%, transparent 60%); }
+    .header-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 80px 80px; opacity: 0.2; }
+    .header-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+    .eyebrow { font-size: 9px; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: var(--green-light); margin-bottom: 20px; display: flex; align-items: center; gap: 14px; }
+    .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--green-light); }
+    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(48px, 6vw, 88px); font-weight: 300; line-height: 0.95; color: var(--white); }
+    .page-title em { font-style: italic; color: var(--green-light); }
+
+    .letter-body {
+      max-width: 800px; margin: 0 auto; padding: 100px 60px;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 3px solid var(--green);
+      padding: 0 0 0 32px; margin: 56px 0;
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3vw, 36px); font-weight: 300;
+      font-style: italic; line-height: 1.4;
+      color: var(--white);
+    }
+
+    .letter-text { font-size: 15px; font-weight: 300; line-height: 1.9; color: rgba(245,245,240,0.8); margin-bottom: 28px; }
+    .letter-text strong { color: var(--white); font-weight: 500; }
+
+    .letter-divider { border: none; border-top: 1px solid var(--border); margin: 48px 0; }
+
+    .letter-sig { margin-top: 48px; }
+    .sig-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; color: var(--white); }
+    .sig-title { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+    .sig-company { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--green-light); margin-top: 4px; }
+
+    .key-message-box {
+      background: var(--dark2); border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      padding: 36px 40px; margin: 48px 0;
+    }
+    .kmb-label { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green-light); margin-bottom: 16px; }
+    .kmb-text { font-size: 15px; font-weight: 400; color: var(--white); line-height: 1.7; }
+
+    footer {
+      background: var(--black); border-top: 1px solid var(--border); padding: 60px 60px 40px;
+    }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr; gap: 60px; padding-bottom: 48px; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; letter-spacing: 4px; color: var(--white); margin-bottom: 16px; }
+    .footer-logo span { color: var(--green-light); }
+    .footer-tagline { font-size: 12px; font-weight: 300; color: var(--muted); line-height: 1.7; max-width: 260px; }
+    .footer-col-title { font-size: 9px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--green-light); margin-bottom: 20px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a { font-size: 12px; font-weight: 300; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1200px; margin: 32px auto 0; display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 11px; color: var(--mid); }
+    .footer-disc { font-size: 10px; color: var(--mid); max-width: 500px; text-align: right; line-height: 1.6; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; } .nav-links { display: none; }
+      .page-header { padding: 120px 24px 60px; }
+      .letter-body { padding: 60px 24px; }
+      .footer-inner { grid-template-columns: 1fr; } footer { padding: 48px 24px 32px; }
+      .footer-bottom { flex-direction: column; gap: 16px; } .footer-disc { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Silvis Investment Journey</a>
+    <ul class="nav-links">
+      <li><a href="AMessage.html" class="active">Message</a></li>
+      <li><a href="Reports.html">Reports</a></li>
+      <li><a href="AboutUs.html">About</a></li>
+      <li><a href="BookRecommendations.html">Reading</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="header-grid"></div>
+    <div class="header-content">
+      <div class="eyebrow">Shareholder Communication</div>
+      <h1 class="page-title">A Message from<br><em>Henrico Silvis</em></h1>
+    </div>
+  </div>
+
+  <div class="letter-body">
+    <p class="letter-text">Dear Shareholders,</p>
+
+    <p class="letter-text">In business and investing, success often comes down to how well we recognise and act on opportunities. The best opportunities rarely arrive dressed in certainty — they come disguised in moments of difficulty, volatility, and doubt. Those who have the courage to lean in when others hesitate are the ones who capture the greatest rewards.</p>
+
+    <div class="pull-quote">
+      <p>"When others are fearful, be greedy. The short-term is a voting machine; the long-term is a weighing machine."</p>
+    </div>
+
+    <p class="letter-text">One of the most important things I want to highlight is the nature of business itself. <strong>Businesses are inherently volatile.</strong> In the short term, markets behave like voting machines — sentiment, trends, and emotion drive prices in ways that often have little to do with a company's true value. But over the long term — 7 years or more — markets act as weighing machines. They ultimately measure the real strength, performance, and enduring worth of a business.</p>
+
+    <div class="key-message-box">
+      <div class="kmb-label">Key Principle</div>
+      <div class="kmb-text">The best thing you can do in a down cycle is accumulate shares in exceptional businesses. History has proven, time and again, that downturns create the greatest opportunities for long-term wealth creation. Down cycles are where the real money is made.</div>
+    </div>
+
+    <p class="letter-text">When prices fall, the disciplined investor's response is clear: buy more. Not to be contrarian for its own sake, but because quality businesses purchased at dislocated prices are the seeds of extraordinary long-term returns. The 2008 financial crisis, the COVID-19 pandemic crash — both rewarded those who stayed the course and leaned in.</p>
+
+    <p class="letter-text">At Silvis Investment Journey, I remain committed to looking beyond short-term noise and focusing on long-term fundamentals. Every decision is guided by the belief that <strong>enduring value creation is built over years, not days</strong>. I own businesses with dominant market positions, high barriers to entry, and cash-rich balance sheets — compounding machines that reward patience.</p>
+
+    <p class="letter-text">Thank you for your continued trust and partnership. Staying the course is not always comfortable, but it is, in our conviction, the surest path to exceptional outcomes.</p>
+
+    <hr class="letter-divider">
+
+    <div class="letter-sig">
+      <div class="sig-name">Henrico Silvis</div>
+      <div class="sig-title">Managing Partner</div>
+      <div class="sig-company">Silvis Investment Journey</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">Silvis Investment Journey</div>
+        <p class="footer-tagline">A personal investment journey dedicated to long-term wealth creation through disciplined, concentrated equity investing.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="AMessage.html">Message from Henrico</a></li>
+          <li><a href="Reports.html">Reports</a></li>
+          <li><a href="AboutUs.html">About</a></li>
+          <li><a href="BookRecommendations.html">Book Recommendations</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul class="footer-links">
+        <div style="margin-top:28px;">
+          <div class="footer-col-title">Legal</div>
+          <ul class="footer-links"><li><a href="LegalDic.html">Legal Disclaimer</a></li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2023–2026 Silvis Investment Journey. All rights reserved.</div>
+      <div class="footer-disc">This letter is for informational purposes only and does not constitute investment advice.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
